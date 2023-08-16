@@ -1,9 +1,0 @@
-version: '3'
-
-services:
-  golden-frame-server:
-    container_name: pingpong
-    image: wasinuddy/prometheuzdy-pingpong:latest
-    restart: unless-stopped
-    ports:
-      - "100:5000"
