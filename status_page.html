@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Prometheuzdy.cloud status</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<style>
+    body {
+        background-color: #e8e8e8;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    .masthead {
+        background-color: #90999a;
+        padding: 4rem;
+        margin: 0;
+    }
+
+    .masthead h1 {
+        font-size: 2.5rem;
+        color: #fff;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 2rem;
+    }
+
+    #statusCheckbox {
+        display: inline-block;
+        margin-right: 1rem;
+    }
+
+    .service {
+        display: flex;
+        border-color: black;
+        border-style: solid;
+        padding: 0.75rem;
+        width: 300px;
+        justify-content: center;
+    }
+
+    .service h2 {
+        margin-left: 1rem;
+    }
+</style>
+
+<body>
+    <div class="masthead">
+        <h1>Prometheuzdy Cloud</h1>
+    </div>
+
+    <div class="container" id="serviceContainer">
+      
+    </div>
+
+    <script>
+        const IPs = {
+            'WallMaria Server': 'http://prometheuzdy.cloud:100/ping',
+        };
+    
+        const container = document.getElementById('serviceContainer');
+    
+        function createServiceElement(name, ip, isUp) {
+            
+            const oldElement = document.getElementById(name);
+            if (oldElement) {
+                oldElement.remove();
+            }
+
+            const serviceElement = document.createElement('div');
+            serviceElement.classList.add('service');
+            
+            const iconClass = isUp ? 'check_circle' : 'cancel'; // Determine the icon class
+            serviceElement.innerHTML = `
+                <i class="material-icons weather-icon">${iconClass}</i>
+                <h2>${name}</h2>
+            `;
+            serviceElement.id = name;
+            
+            return serviceElement;
+        }
+    
+        function updateServiceStatus() {
+            for (const serviceName in IPs) {
+                const serviceIP = IPs[serviceName];
+                fetch(serviceIP)
+                    .then(response => {
+                        const isUp = response.status === 200;
+                        const serviceElement = createServiceElement(serviceName, serviceIP, isUp);
+                        container.appendChild(serviceElement);
+                    })
+                    .catch(error => {
+                        const serviceElement = createServiceElement(serviceName, serviceIP, false);
+                        container.appendChild(serviceElement);
+                    });
+            }
+        }
+    
+        // Fetch and update status every 5 seconds (adjust interval as needed)
+        setInterval(updateServiceStatus, 1000);
+    </script>
+</body>
+
+</html>
