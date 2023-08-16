@@ -8,17 +8,16 @@ on:
 permissions:
   contents: write
 
-
 jobs:
   deploy:
     concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
 
-  steps:
-    - name: Checkout Repo
-      uses: actions/checkout@v3
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
 
-    - name: deploy 🏃‍♂️
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-        folder: .
+      - name: deploy 🏃‍♂️
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: .
