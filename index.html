@@ -53,16 +53,57 @@
             margin-left: 1rem;
             font-weight: lighter;
         }
+
+        .popup {
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, .4);
+        }
+        
+        .popup-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            text-align: center;
+        }
     </style>
 </head>
 
 <body>
     <div class="masthead">
         <h1>Prometheuzdy Status</h1>
+        <audio id="prometheuzdy_niwat" src="./public/prometheuzdy_niwat.wav" autoplay loop></audio>
     </div>
-    <div class="container" id="container">
+    <div class="container" id="container"></div>
+
+    <!-- popup -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <h1>ATTENTION CITIZEN! 市民请注意!</h1>
+            <p>This is the Central Intelligentsia of the Chinese Communist Party. 您的 Internet 浏览器历史记录和活动引起了我们的注意。 YOUR INTERNET ACTIVITY HAS ATTRACTED OUR ATTENTION. 因此，您的个人资料中的 11115 ( -11115 Social Credits) 个社会积分将打折。 DO NOT DO THIS AGAIN! 不要再这样做! If you do not hesitate, more Social Credits ( -11115 Social Credits )will be subtracted from your profile, resulting in the subtraction of ration supplies. (由人民供应部重新分配 CCP) You'll also be sent into a re-education camp in the Xinjiang Uyghur Autonomous Zone. 如果您毫不犹豫，更多的社会信用将从您的个人资料中打折，从而导致口粮供应减少。 您还将被送到新疆维吾尔自治区的再教育营。</p>
+
+            <button id="glory-ccp-button" style="margin: 1rem; padding: 0.5rem;">为党争光! Glory to the CCP!</button>
+        </div>
     </div>
+
+    <script type="module">
+        document.getElementById('glory-ccp-button').addEventListener('click', () => {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('prometheuzdy_niwat').play();
+        });
+    </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
+
     <script type="module">
         
         

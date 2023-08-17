@@ -17,7 +17,17 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v3
 
-      - name: deploy 🏃‍♂️
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Create dist
+        run: |
+          mkdir -p dist
+          cp -r public dist
+          cp index.html dist
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
         with:
-          folder: .
+          path: "dist"
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
