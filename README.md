@@ -19,16 +19,11 @@ Edit the `IPs.json` file to add the services you want to monitor. For each servi
 Example `IPs.json`:
 
 ```json
-[
-  {
-    "name": "Service 1",
-    "pingEndpoint": "https://service1.example.com/ping"
-  },
-  {
-    "name": "Service 2",
-    "pingEndpoint": "https://service2.example.com/ping"
-  }
-]
+
+{
+  "Service 1": "http://service-1.io:200/ping",
+  "Service 2": "http://service-2.io:300/ping"
+}
 
 ```
 
