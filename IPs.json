@@ -1,3 +1,4 @@
 {
-    "WallMaria Server" : "http://prometheuzdy.cloud:100/ping"
+    "RPI NGINX Server" : "https://pingpong.prometheuzdy.cloud/minecraft",
+    "Minecraft Server" : "https://pingpong.prometheuzdy.cloud/minecraft" 
 }
