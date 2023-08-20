@@ -3,7 +3,7 @@ from flask_cors import CORS
 
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=['https://status.prometheuzdy.cloud'], methods=['GET'])
 
 @app.route('/ping', methods=['GET'])
 def ping():
@@ -15,3 +15,5 @@ def ping():
 
 if __name__ == '__main__':
     app.run()
+
+
