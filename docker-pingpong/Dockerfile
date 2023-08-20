@@ -1,4 +1,7 @@
-FROM python:3.9-alpine
+FROM --platform=$BUILDPLATFORM python:3.9-alpine AS build
+ARG TARGETPLATFORM
+ARG BUILDPLATFORM
+
 
 WORKDIR /app
 
