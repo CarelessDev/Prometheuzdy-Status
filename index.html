@@ -19,15 +19,10 @@
             font-family: 'Roboto', sans-serif;
         }
 
-        .gif-container{
-            position: absolute;
-            top: 800px;
-            left: 10px;
-            width: 100%;
-            height: 100%;
-        }
-
         .gif {
+            position: absolute;
+            bottom: 5px;
+            left: 5px;
             width: 10%;
             height: 10%;
         }
@@ -121,7 +116,7 @@
 <body>
     <div class="masthead">
         <h1>Prometheuzdy Status</h1>
-        <audio id="prometheuzdy_niwat" src="./public/prometheuzdy_villager.wav" autoplay loop></audio>
+        <audio id="prometheuzdy_niwat" src="./public/redsun.opus" autoplay loop></audio>
     </div>
     <div class="container" id="container"></div>
 
@@ -146,13 +141,15 @@
     </div>
 
     <div class="gif-container">
-        <img src="public\sirimongkon.gif" alt="GIF" class="gif">
+        <img src="public/sirimongkon.gif" alt="Sirimongkon" id="sirimongkon" class="gif" style="display: none">
     </div>
 
     <script type="module">
         document.getElementById('glory-ccp-button').addEventListener('click', () => {
             document.getElementById('popup').style.display = 'none';
             document.getElementById('prometheuzdy_niwat').play();
+            document.getElementById('prometheuzdy_niwat').volume = 0.33
+            document.getElementById('sirimongkon').style = ''
         });
     </script>
 
