@@ -1,6 +1,6 @@
 # Prometheuzdy-Status
 
-pingpong
+
 [![Deployment Status](https://github.com/CarelessDev/Prometheuzdy-Status/actions/workflows/deploy.yml/badge.svg)](https://github.com/CarelessDev/Prometheuzdy-Status/actions/workflows/deploy.yml)
 
 
