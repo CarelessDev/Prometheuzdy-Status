@@ -33,7 +33,7 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: ghcr.io/prometheuzdy-pingpong:latest
+          tags: ghcr.io/carelessdev/prometheuzdy-pingpong:latest
           platforms: linux/amd64,linux/arm64
           cache-from: type=gha
           cache-to: type=gha,mode=max
