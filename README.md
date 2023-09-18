@@ -3,7 +3,7 @@
 [![Deployment Status](https://github.com/CarelessDev/Prometheuzdy-Status/actions/workflows/deploy.yml/badge.svg)](https://github.com/CarelessDev/Prometheuzdy-Status/actions/workflows/deploy.yml)
 [![Deployment Status](https://github.com/CarelessDev/Prometheuzdy-Status/actions/workflows/CI.yml/badge.svg)](https://github.com/CarelessDev/Prometheuzdy-Status/actions/workflows/CI.yml)
 
-This repository hosts a webpage that displays the status of the `prometheuzdy.cloud` service using the `wasinuddy/prometheuzdy-pingpong` tool. The status information is obtained by pinging endpoints specified in the `IPs.json` file.
+This repository hosts a webpage that displays the status of the `prometheuzdy.cloud` service using the `ghcr.io/carelessdev/prometheuzdy-status:latest` tool. The status information is obtained by pinging endpoints specified in the `IPs.json` file.
 
 ## Usage
 
