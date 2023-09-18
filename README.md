@@ -29,9 +29,9 @@ Example `IPs.json`:
 
 ### 2. Adding Pingpong service to VM
 
-Run the [wasinuddy/prometheuzdy-pingpong]("https://hub.docker.com/repository/docker/wasinuddy/prometheuzdy-pingpong") so the status page can ping the services. Map your desire port to the container's port `5000`.
+Run the pingpong image so the status page can ping the services. Map your desired port to the container's port `5000`.
 
 ```bash
-docker run -d -p 100:5000 wasinuddy/prometheuzdy-pingpong
+docker run -d -p 100:5000 ghcr.io/carelessdev/prometheuzdy-status:latest
 ```
 
