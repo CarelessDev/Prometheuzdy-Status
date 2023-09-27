@@ -24,7 +24,6 @@ Example `IPs.json`:
   "Service 1": "http://service-1.io:200/ping",
   "Service 2": "http://service-2.io:300/ping"
 }
-
 ```
 
 ### 2. Adding Pingpong service to VM
